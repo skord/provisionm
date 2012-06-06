@@ -1,6 +1,6 @@
 xml.instruct!
-xml.tag!('model-import', 'non-ip-snmp-primary' => 'N', 
-         'non-ip-interfaces' => 'false', 
+xml.tag!('model-import', 'non-ip-snmp-primary' => @requisition.non_ip_snmp_primary, 
+         'non-ip-interfaces' => @requisition.non_ip_interfaces, 
          'foreign-source' => @requisition.name, 
          'date-stamp' => @requisition.updated_at.iso8601,
          'xmlns' => "http://xmlns.opennms.org/xsd/config/model-import"

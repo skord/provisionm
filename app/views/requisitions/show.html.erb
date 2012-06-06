@@ -5,8 +5,20 @@
   <%= @requisition.name %>
 </p>
 
+<p>
+	<b>Non-IP SNMP Primary:</b>
+	<%= @requisition.non_ip_snmp_primary %>
+</p>
+
+<p>
+	<b>Non-IP Interfaces:</b>
+	<%= @requisition.non_ip_interfaces.titleize %>
+</p>
+
+<h3>Nodes</h3>
 <% @requisition.nodes.each do |node| %>
 <%= node.name %>
+<br />
 <% end  %>
 
 

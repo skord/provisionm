@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120606170739) do
+ActiveRecord::Schema.define(:version => 20120606192223) do
 
   create_table "buildings", :force => true do |t|
     t.string   "name"
@@ -93,8 +93,10 @@ ActiveRecord::Schema.define(:version => 20120606170739) do
 
   create_table "requisitions", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.string   "non_ip_interfaces",   :default => "false"
+    t.string   "non_ip_snmp_primary", :default => "N"
   end
 
   create_table "services", :force => true do |t|
