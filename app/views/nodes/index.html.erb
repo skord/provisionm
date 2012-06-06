@@ -1,0 +1,40 @@
+<h1>Listing nodes</h1>
+
+<table class='table'>
+	<thead>
+  <tr>
+    <th>Name</th>
+    <th>Foreign reference</th>
+		<th>Requisition Group</th>
+    <th>Manufacturer</th>
+    <th>Building</th>
+    <th>Product</th>
+    <th>Support contract</th>
+    <th>Vendor</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+	</thead>
+	<tbody>
+	<% @nodes.each do |node| %>
+	  <tr>
+	    <td><%= node.name %></td>
+	    <td><%= node.foreign_reference %></td>
+			<td><%= node.requisition.try(:name) %></td>
+	    <td><%= node.manufacturer.try(:name) %></td>
+	    <td><%= node.building.try(:name) %></td>
+	    <td><%= node.product.try(:name) %></td>
+	    <td><%= node.support_contract.try(:name) %></td>
+	    <td><%= node.vendor.try(:name) %></td>
+	    <td><%= link_to 'Show', node %></td>
+	    <td><%= link_to 'Edit', edit_node_path(node) %></td>
+	    <td><%= link_to 'Destroy', node, confirm: 'Are you sure?', method: :delete %></td>
+	  </tr>
+	<% end %>
+	</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Node', new_node_path %>

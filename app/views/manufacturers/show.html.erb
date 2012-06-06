@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @manufacturer.name %>
+</p>
+
+<table class='table'>
+	<thead>
+		<tr>
+			<th>Product Name</th>
+			<th>Product Model Number</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render :partial => 'product', :collection => @manufacturer.products %>
+	</tbody>
+</table>
+
+<%= link_to 'Edit', edit_manufacturer_path(@manufacturer) %> |
+<%= link_to 'Back', manufacturers_path %>

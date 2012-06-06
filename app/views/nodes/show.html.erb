@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @node.name %>
+</p>
+
+<p>
+  <b>Foreign reference:</b>
+  <%= @node.foreign_reference %>
+</p>
+
+<p>
+  <b>Requisition group:</b>
+  <%= @node.requisition.try(:name) %>
+</p>
+
+
+<p>
+  <b>Manufacturer:</b>
+  <%= @node.manufacturer.try(:name) %>
+</p>
+
+<p>
+  <b>Building:</b>
+  <%= @node.building.try(:name) %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <%= @node.product.try(:name) %>
+</p>
+
+<p>
+  <b>Support contract:</b>
+  <%= @node.support_contract.try(:name) %>
+</p>
+
+<p>
+  <b>Vendor:</b>
+  <%= @node.vendor.try(:name) %>
+</p>
+
+<h3>Categories</h3>
+<%= render :partial => 'node_category', :collection => @node.node_categories %>
+
+<h3>IP Interfaces</h3>
+<table class='table'>
+	<thead>
+		<tr>
+			<th>Address</th>
+			<th>Description</th>
+			<th>SNMP Primary</th>
+			<th>Services</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render :partial => 'ip_interface', :collection => @node.ip_interfaces %>
+	</tbody>
+</table>
+
+<%= link_to 'Edit', edit_node_path(@node) %> |
+<%= link_to 'Back', nodes_path %>

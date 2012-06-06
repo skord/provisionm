@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @requisition.name %>
+</p>
+
+<% @requisition.nodes.each do |node| %>
+<%= node.name %>
+<% end  %>
+
+
+<%= link_to 'Edit', edit_requisition_path(@requisition) %> |
+<%= link_to 'Back', requisitions_path %>

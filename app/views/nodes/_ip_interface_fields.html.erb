@@ -1,0 +1,8 @@
+<div class='nested-fields well'>
+	<h3>IP Interface</h3>
+	<%= f.input :address %>
+	<%= f.input :description %>
+	<%= f.input :snmp_primary, :as => :select, :collection => ['N','S', 'P'] %>
+	<%= f.association :services %>
+ 	<%= link_to_remove_association "remove ip interface", f %>
+</div>

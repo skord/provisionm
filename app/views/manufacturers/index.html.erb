@@ -1,0 +1,28 @@
+<h1>Manufacturers</h1>
+
+<table class='table'>
+	<thead>
+  <tr>
+    <th>Name</th>
+		<th>Registered Products</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+	</thead>
+	<tbody>
+		<% @manufacturers.each do |manufacturer| %>
+		  <tr>
+		    <td><%= manufacturer.name %></td>
+				<td><%= manufacturer.products.count %></td>
+		    <td><%= link_to 'Show', manufacturer %></td>
+		    <td><%= link_to 'Edit', edit_manufacturer_path(manufacturer) %></td>
+		    <td><%= link_to 'Destroy', manufacturer, confirm: 'Are you sure?', method: :delete %></td>
+		  </tr>
+		<% end %>
+	<tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Manufacturer', new_manufacturer_path %>

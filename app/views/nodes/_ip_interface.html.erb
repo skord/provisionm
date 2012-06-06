@@ -1,0 +1,10 @@
+<tr>
+	<td><%= ip_interface.address %></td>
+	<td><%= ip_interface.description %></td>
+	<td><%= ip_interface.snmp_primary %></td>
+	<td>
+		<% ip_interface.services.each do |service| %>
+			<%= service.name %>
+		<% end  %>
+	</td>
+</tr>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  foreign_reference: MyString
+  manufacturer: 
+  building: 
+  product: 
+  support_contract: 
+  vendor: 
+
+two:
+  name: MyString
+  foreign_reference: MyString
+  manufacturer: 
+  building: 
+  product: 
+  support_contract: 
+  vendor: 

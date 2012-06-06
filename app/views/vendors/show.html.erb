@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @vendor.name %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @vendor.phone %>
+</p>
+
+<p>
+  <b>Fax:</b>
+  <%= @vendor.fax %>
+</p>
+
+<h3>Support Contracts</h3>
+<table class='table'>
+	<thead>
+		<tr>
+			<th>Contract Name</th>
+			<th>Expires</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render :partial => 'support_contract', :collection => @vendor.support_contracts %>
+	</tbody>
+</table>
+<%= link_to 'Edit', edit_vendor_path(@vendor) %> |
+<%= link_to 'Back', vendors_path %>

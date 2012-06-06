@@ -1,0 +1,26 @@
+<h1>Listing node_categories</h1>
+
+<table class='table'>
+	<thead>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+	</thead>
+<tbody>
+<% @node_categories.each do |node_category| %>
+  <tr>
+    <td><%= node_category.name %></td>
+    <td><%= link_to 'Show', node_category %></td>
+    <td><%= link_to 'Edit', edit_node_category_path(node_category) %></td>
+    <td><%= link_to 'Destroy', node_category, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Node category', new_node_category_path %>

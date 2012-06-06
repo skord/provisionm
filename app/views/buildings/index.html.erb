@@ -1,0 +1,36 @@
+<h1>Locations</h1>
+
+<table class='table'>
+	<thead>
+  <tr>
+    <th>Name</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+	</thead>
+	<tbody>
+		<% @buildings.each do |building| %>
+		  <tr>
+		    <td><%= building.name %></td>
+		    <td><%= building.address1 %></td>
+		    <td><%= building.address2 %></td>
+		    <td><%= building.city %></td>
+		    <td><%= building.state %></td>
+		    <td><%= building.zip %></td>
+		    <td><%= link_to 'Show', building %></td>
+		    <td><%= link_to 'Edit', edit_building_path(building) %></td>
+		    <td><%= link_to 'Destroy', building, confirm: 'Are you sure?', method: :delete %></td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Building', new_building_path %>

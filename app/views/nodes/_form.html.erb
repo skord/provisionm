@@ -1,0 +1,27 @@
+<%= simple_form_for(@node) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+		<%= f.association :requisition %>
+    <%= f.input :name %>
+    <%= f.input :foreign_reference %>
+    <%= f.association :manufacturer %>
+    <%= f.association :building %>
+    <%= f.association :product %>
+    <%= f.association :support_contract %>
+    <%= f.association :vendor %>
+		<%= f.association :node_categories %>
+		<div id='ip_interfaces'>
+			<%= f.simple_fields_for :ip_interfaces do |ip_interface| %>
+				<%= render 'ip_interface_fields', :f => ip_interface %>
+			<% end %>
+			<div class='links'>
+				<%= link_to_add_association 'add ip interface', f, :ip_interfaces %>				
+			</div>
+		</div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

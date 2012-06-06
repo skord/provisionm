@@ -1,0 +1,22 @@
+<%= simple_form_for(@vendor) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :phone %>
+    <%= f.input :fax %>
+		<h3>Support Contracts</h3>
+		<div id='support-contracts'>
+		<%= f.simple_fields_for :support_contracts do |support_contract| %>
+			<%= render 'support_contract_fields', :f => support_contract %>
+		<% end %>
+			<div class='links'>
+				<%= link_to_add_association 'add support contract', f, :support_contracts %>				
+			</div>
+		</div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
