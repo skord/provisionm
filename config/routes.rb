@@ -1,4 +1,10 @@
 Provisionm::Application.routes.draw do
+  get "help" => 'help#index'
+
+  get "help/about" => 'help#about'
+
+  get "help/usage" => 'help#usage'
+
   resources :requisitions
 
   resources :services

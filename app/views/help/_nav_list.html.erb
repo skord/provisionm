@@ -1,0 +1,24 @@
+<% # ha, this is a terrible way to do things. I should have helpers instead. I am lazy today %>
+<ul class="nav nav-list well">
+  <li class="nav-header">
+    Help
+  </li>
+  <li <%= 'class=active' if controller.action_name == "index" %>>
+    <a href="/help">
+			<i class="icon-home"></i> 
+			Help Home
+		</a>
+  </li>
+  <li <%= 'class=active' if controller.action_name == "usage" %>>
+    <a href="/help/usage">
+			<i class='icon-cog'></i>
+			Usage
+		</a>
+  </li>
+  <li <%= 'class=active' if controller.action_name == "about" %>>
+    <a href="/help/about">
+			<i class='icon-question-sign'></i>
+			About
+		</a>
+  </li>
+</ul>
