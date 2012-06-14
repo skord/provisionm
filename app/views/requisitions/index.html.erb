@@ -18,8 +18,8 @@
     <td><%= requisition.nodes.count %></td>
 		<td><a href="/requisitions/<%= requisition.slug %>.xml">XML</a></td>
     <td><%= link_to 'Show', requisition, :class => 'btn' %></td>
-    <td><%= link_to 'Edit', edit_requisition_path(requisition), :class => 'btn btn-primary' %></td>
-    <td><%= link_to 'Destroy', requisition, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger' %></td>
+    <td><%= link_to 'Edit', edit_requisition_path(requisition), :class => 'btn btn-primary admin' %></td>
+    <td><%= link_to 'Destroy', requisition, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger admin' %></td>
   </tr>
 <% end %>
 </tbody>
@@ -27,4 +27,4 @@
 
 <br />
 
-<%= link_to 'New Requisition', new_requisition_path, :class => 'btn btn-success' %>
+<%= link_to 'New Requisition', new_requisition_path, :class => 'btn btn-success admin' %>

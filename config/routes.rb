@@ -1,4 +1,6 @@
 Provisionm::Application.routes.draw do
+  devise_for :users
+
   get "help" => 'help#index'
 
   get "help/about" => 'help#about'

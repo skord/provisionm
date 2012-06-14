@@ -1,5 +1,5 @@
-
 class BuildingsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
   # GET /buildings
   # GET /buildings.json
   def index

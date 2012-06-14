@@ -12,3 +12,7 @@
  *= require_tree .
  *= require twitter/bootstrap
  */
+
+a.admin {
+	display: none;
+}

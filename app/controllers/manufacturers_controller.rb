@@ -1,5 +1,5 @@
-
 class ManufacturersController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
   # GET /manufacturers
   # GET /manufacturers.json
   def index

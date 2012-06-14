@@ -14,6 +14,5 @@
 		<%= render :partial => 'product', :collection => @manufacturer.products %>
 	</tbody>
 </table>
-
-<%= link_to 'Edit', edit_manufacturer_path(@manufacturer), :class => 'btn btn-primary' %>
+<%= link_to 'Edit', edit_manufacturer_path(@manufacturer), :class => 'btn btn-primary admin' %>
 <%= link_to 'Back', manufacturers_path, :class => 'btn' %>

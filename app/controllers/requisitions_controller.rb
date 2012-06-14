@@ -1,4 +1,5 @@
 class RequisitionsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
   # GET /requisitions
   # GET /requisitions.json
   def index

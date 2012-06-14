@@ -1,5 +1,5 @@
-
 class NodesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
   # GET /nodes
   # GET /nodes.json
   def index

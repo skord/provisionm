@@ -16,13 +16,12 @@
 		    <td><%= manufacturer.name %></td>
 				<td><%= manufacturer.products.count %></td>
 		    <td><%= link_to 'Show', manufacturer, :class => 'btn' %></td>
-		    <td><%= link_to 'Edit', edit_manufacturer_path(manufacturer), :class => 'btn btn-primary' %></td>
-		    <td><%= link_to 'Destroy', manufacturer, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger' %></td>
+		    <td><%= link_to 'Edit', edit_manufacturer_path(manufacturer), :class => 'btn btn-primary admin' %></td>
+		    <td><%= link_to 'Destroy', manufacturer, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger admin' %></td>
 		  </tr>
 		<% end %>
 	</tbody>
 </table>
 
 <br />
-
-<%= link_to 'New Manufacturer', new_manufacturer_path, :class => 'btn btn-success' %>
+<%= link_to 'New Manufacturer', new_manufacturer_path, :class => 'btn btn-success admin' %>

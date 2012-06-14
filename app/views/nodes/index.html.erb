@@ -28,8 +28,8 @@
 	    <td><%= node.support_contract.try(:name) %></td>
 	    <td><%= node.vendor.try(:name) %></td>
 	    <td><%= link_to 'Show', node, :class => 'btn' %></td>
-	    <td><%= link_to 'Edit', edit_node_path(node), :class => 'btn btn-primary' %></td>
-	    <td><%= link_to 'Destroy', node, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger' %></td>
+	    <td><%= link_to 'Edit', edit_node_path(node), :class => 'btn btn-primary admin' %></td>
+	    <td><%= link_to 'Destroy', node, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger admin' %></td>
 	  </tr>
 	<% end %>
 	</tbody>
@@ -37,4 +37,4 @@
 
 <br />
 
-<%= link_to 'New Node', new_node_path, :class => 'btn btn-success' %>
+<%= link_to 'New Node', new_node_path, :class => 'btn btn-success admin' %>

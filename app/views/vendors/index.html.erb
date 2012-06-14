@@ -22,8 +22,8 @@
 				<td><%= vendor.support_contracts.active.count %></td>
 				<td><%= vendor.support_contracts.expired.count %></td>				
 		    <td><%= link_to 'Show', vendor, :class => 'btn' %></td>
-		    <td><%= link_to 'Edit', edit_vendor_path(vendor), :class => 'btn btn-primary' %></td>
-		    <td><%= link_to 'Destroy', vendor, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger' %></td>
+		    <td><%= link_to 'Edit', edit_vendor_path(vendor), :class => 'btn btn-primary admin' %></td>
+		    <td><%= link_to 'Destroy', vendor, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger admin' %></td>
 		  </tr>
 		<% end %>
 	</tbody>
@@ -31,4 +31,4 @@
 
 <br />
 
-<%= link_to 'New Vendor', new_vendor_path, :class => 'btn btn-success' %>
+<%= link_to 'New Vendor', new_vendor_path, :class => 'btn btn-success admin' %>

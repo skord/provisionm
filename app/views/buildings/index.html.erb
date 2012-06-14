@@ -24,8 +24,8 @@
 		    <td><%= building.state %></td>
 		    <td><%= building.zip %></td>
 		    <td><%= link_to 'Show', building, :class => 'btn' %></td>
-		    <td><%= link_to 'Edit', edit_building_path(building), :class => 'btn btn-primary' %></td>
-		    <td><%= link_to 'Destroy', building, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger' %></td>
+		    <td><%= link_to 'Edit', edit_building_path(building), :class => 'btn btn-primary admin' %></td>
+		    <td><%= link_to 'Destroy', building, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger admin' %></td>
 		  </tr>
 		<% end %>
 	</tbody>
@@ -33,4 +33,4 @@
 
 <br />
 
-<%= link_to 'New Location', new_building_path, :class => 'btn btn-success' %>
+<%= link_to 'New Location', new_building_path, :class => 'btn btn-success admin' %>
