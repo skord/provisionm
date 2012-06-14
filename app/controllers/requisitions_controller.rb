@@ -1,4 +1,3 @@
-
 class RequisitionsController < ApplicationController
   # GET /requisitions
   # GET /requisitions.json

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120606192223) do
+ActiveRecord::Schema.define(:version => 20120614192116) do
 
   create_table "buildings", :force => true do |t|
     t.string   "name"
@@ -97,7 +97,10 @@ ActiveRecord::Schema.define(:version => 20120606192223) do
     t.datetime "updated_at",                               :null => false
     t.string   "non_ip_interfaces",   :default => "false"
     t.string   "non_ip_snmp_primary", :default => "N"
+    t.string   "slug"
   end
+
+  add_index "requisitions", ["slug"], :name => "index_requisitions_on_slug"
 
   create_table "services", :force => true do |t|
     t.string   "name"
