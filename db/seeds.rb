@@ -12,7 +12,7 @@ NodeCategory.create(name: 'Test')
 NodeCategory.create(name: 'Servers')
 NodeCategory.create(name: 'Switches')
 NodeCategory.create(name: 'Routers')
-Service.create(name: 'DHCP')
-Service.create(name: 'SNMP')
-Service.create(name: 'ICMP')
-Service.create(name: 'Telnet')
+services = ["DHCP", "SNMP", "ICMP", "Telnet", "DNS", "FTP", "HTTP", "HTTPS", "IMAP", "LDAP", "NRPE", "POP3", "Radius", "SMTP", "SSH", "BGP_Session", "BSF", "CITRIX", "Cisco_IP_SLA", "Dell_OpenManageChassis", "DiskUsage", "DominoIIOP", "HOST-RESOURCES", "JBOSS", "JDBC", "JSR160", "LDAPS", "LOOP", "MSExchange", "MX4J", "Memcached", "NOTES", "NTP", "OMSAStorage", "PERC", "SMB", "SMS", "TrivialTime", "WEB", "WMI"]
+services.each do |s|
+  Service.create(name: s)
+end

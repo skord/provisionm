@@ -8,7 +8,8 @@ An example external provisioning source for OpenNMS.
 2. cd provisionm
 3. bundle install
 4. rake db:setup
-5. foreman start
+5. rake db:seed
+6. foreman start
 
 ## Status
 
