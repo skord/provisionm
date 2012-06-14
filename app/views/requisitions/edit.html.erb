@@ -1,6 +1,6 @@
-<h1>Editing requisition</h1>
+<h1>Editing Requisition: <%= @requisition.name %> </h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @requisition %> |
-<%= link_to 'Back', requisitions_path %>
+<%= link_to 'Cancel', @requisition, :class => 'btn' %>
+<%= link_to 'Back', requisitions_path, :class => 'btn' %>

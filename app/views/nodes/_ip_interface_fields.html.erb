@@ -4,5 +4,5 @@
 	<%= f.input :description %>
 	<%= f.input :snmp_primary, :as => :select, :collection => ['N','S', 'P'] %>
 	<%= f.association :services %>
- 	<%= link_to_remove_association "remove ip interface", f %>
+ 	<%= link_to_remove_association "Remove", f, :class => 'btn btn-danger' %>
 </div>

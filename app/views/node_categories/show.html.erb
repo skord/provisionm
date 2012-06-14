@@ -1,10 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Name:</b>
   <%= @node_category.name %>
 </p>
 
 
-<%= link_to 'Edit', edit_node_category_path(@node_category) %> |
-<%= link_to 'Back', node_categories_path %>
+<%= link_to 'Edit', edit_node_category_path(@node_category), :class => 'btn btn-primary' %>
+<%= link_to 'Back', node_categories_path, :class => 'btn' %>

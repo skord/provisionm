@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Name:</b>
   <%= @requisition.name %>
@@ -21,6 +19,6 @@
 <br />
 <% end  %>
 
-
-<%= link_to 'Edit', edit_requisition_path(@requisition) %> |
-<%= link_to 'Back', requisitions_path %>
+<br />
+<%= link_to 'Edit', edit_requisition_path(@requisition), :class => 'btn btn-primary' %>
+<%= link_to 'Back', requisitions_path, :class => 'btn' %>

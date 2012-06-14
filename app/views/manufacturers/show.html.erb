@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Name:</b>
   <%= @manufacturer.name %>
@@ -17,5 +15,5 @@
 	</tbody>
 </table>
 
-<%= link_to 'Edit', edit_manufacturer_path(@manufacturer) %> |
-<%= link_to 'Back', manufacturers_path %>
+<%= link_to 'Edit', edit_manufacturer_path(@manufacturer), :class => 'btn btn-primary' %>
+<%= link_to 'Back', manufacturers_path, :class => 'btn' %>

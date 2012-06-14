@@ -1,4 +1,4 @@
-<h1>Listing nodes</h1>
+<h1>Nodes</h1>
 
 <table class='table'>
 	<thead>
@@ -27,9 +27,9 @@
 	    <td><%= node.product.try(:name) %></td>
 	    <td><%= node.support_contract.try(:name) %></td>
 	    <td><%= node.vendor.try(:name) %></td>
-	    <td><%= link_to 'Show', node %></td>
-	    <td><%= link_to 'Edit', edit_node_path(node) %></td>
-	    <td><%= link_to 'Destroy', node, confirm: 'Are you sure?', method: :delete %></td>
+	    <td><%= link_to 'Show', node, :class => 'btn' %></td>
+	    <td><%= link_to 'Edit', edit_node_path(node), :class => 'btn btn-primary' %></td>
+	    <td><%= link_to 'Destroy', node, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger' %></td>
 	  </tr>
 	<% end %>
 	</tbody>
@@ -37,4 +37,4 @@
 
 <br />
 
-<%= link_to 'New Node', new_node_path %>
+<%= link_to 'New Node', new_node_path, :class => 'btn btn-success' %>

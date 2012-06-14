@@ -15,13 +15,10 @@
 			<%= f.simple_fields_for :ip_interfaces do |ip_interface| %>
 				<%= render 'ip_interface_fields', :f => ip_interface %>
 			<% end %>
-			<div class='links'>
-				<%= link_to_add_association 'add ip interface', f, :ip_interfaces %>				
-			</div>
 		</div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= link_to_add_association 'Add Interface', f, :ip_interfaces, :class => 'btn btn-success' %> <%= f.button :submit, :class => 'btn btn-primary' %>
   </div>
 <% end %>

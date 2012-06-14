@@ -8,13 +8,11 @@
 			<%= f.simple_fields_for :products do |product| %>
 				<%= render "product_fields", :f => product %>
 			<% end %>
-			<div class='links'>
-				<%= link_to_add_association 'add product', f, :products %>
-			</div>
 		</div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+<%= link_to_add_association 'Add New Product', f, :products, :class => 'btn btn-success' %>
+    <%= f.button :submit, :class => 'btn btn-primary' %>
   </div>
 <% end %>

@@ -1,4 +1,4 @@
-<h1>Listing requisitions</h1>
+<h1>Requisitions</h1>
 
 <table class='table'>
 	<thead>
@@ -17,9 +17,9 @@
     <td><%= requisition.name %></td>
     <td><%= requisition.nodes.count %></td>
 		<td><a href="/requisitions/<%= requisition.id %>.xml">XML</a></td>
-    <td><%= link_to 'Show', requisition %></td>
-    <td><%= link_to 'Edit', edit_requisition_path(requisition) %></td>
-    <td><%= link_to 'Destroy', requisition, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', requisition, :class => 'btn' %></td>
+    <td><%= link_to 'Edit', edit_requisition_path(requisition), :class => 'btn btn-primary' %></td>
+    <td><%= link_to 'Destroy', requisition, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger' %></td>
   </tr>
 <% end %>
 </tbody>
@@ -27,4 +27,4 @@
 
 <br />
 
-<%= link_to 'New Requisition', new_requisition_path %>
+<%= link_to 'New Requisition', new_requisition_path, :class => 'btn btn-success' %>

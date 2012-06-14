@@ -10,13 +10,12 @@
 		<%= f.simple_fields_for :support_contracts do |support_contract| %>
 			<%= render 'support_contract_fields', :f => support_contract %>
 		<% end %>
-			<div class='links'>
-				<%= link_to_add_association 'add support contract', f, :support_contracts %>				
-			</div>
+
 		</div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= link_to_add_association 'Add Support Contract', f, :support_contracts, :class => 'btn btn-success' %>	
+		<%= f.button :submit, :class => 'btn btn-primary' %>
   </div>
 <% end %>

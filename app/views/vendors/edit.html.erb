@@ -1,6 +1,6 @@
-<h1>Editing vendor</h1>
+<h1>Editing Vendor: <%= @vendor.name %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @vendor %> |
-<%= link_to 'Back', vendors_path %>
+<%= link_to 'Cancel', @vendor, :class => 'btn' %>
+<%= link_to 'Back', vendors_path, :class => 'btn' %>

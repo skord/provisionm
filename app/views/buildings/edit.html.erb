@@ -1,6 +1,6 @@
-<h1>Editing building</h1>
+<h1>Editing Location: <%= @building.name %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @building %> |
-<%= link_to 'Back', buildings_path %>
+<%= link_to 'Cancel', @building, :class => 'btn' %>
+<%= link_to 'Back', buildings_path, :class => 'btn' %>
