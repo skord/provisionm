@@ -1,0 +1,45 @@
+<h3>Overview</h3>
+
+<p>The menu bar is setup so you go from left to right creating things.</p>
+
+<h3>Locations</h3>
+
+<p>Your equipment needs a place to live, so setup a Location. These map to <b>Buildings</b> within OpenNMS, so you may see the term <i>Building</i> interchanged with <i>Location</i> in the UI. Once you've setup locations, you can re-use them per node without having to retype each address.</p>
+
+<h3>Manufacturers/Products</h3>
+
+<p>Someone makes all this stuff you have to take care of, so why don't we track it. For each equipment type you're going to manage, create the Manufacturer, such as <b>Cisco</b>. On the form that creates manufacturers, you also setup the products for that manufacturer, such as <b>Catalyst 2960</b>.</p>
+
+<p>You can choose to not create products for a manufacturer or you can come back and add them later via the <b>Edit</b> button on the manufacturer page.</p>
+
+<p>You will assign the items you create here to Nodes further on down the line</p>
+
+<h3>Vendors</h3>
+
+<p>Even if the manufacturer of your product is also the vendor, you'll want to recreate that here. The phone field maps to the support phone number in OpenNMS, the Fax field is the vendor fax. This is also where you will create your support contract information that you'll eventually assign to your nodes. You can create as many support contracts as you like per vendor.</p>
+
+<h3>Nodes</h3>
+
+<p>Fun times ahead. You'll need a name at a minimum and hopefully some other information. Don't worry about adding a requisition now, you can do it at a later time, and if you follow instructions, you haven't created a requisition yet. Next, if you have a number from an external provisioning system that identifies this node, enter it in the <b>Foreign Reference</b> field. If you don't put anything in the "Foreign Reference" field, ProvisionM will create a unique number for you. The next five fields in the form are drop downs to which you can associate the information you entered above to your node, things like what building it's in, who made it, etc.</p>
+
+<p>
+	The <b>Node categories</b> selection box allows you to pick labels for your devices which map to categories in OpenNMS. Hold down Control or Command to select more than one. You probably want to select more than one.
+</p>
+
+<p>
+	Click the <b>Add Interface</b> button to add an IP Interface to your Node. You can add as many IP Interfaces as you like. Enter the info here, choose the appropriate SNMP Primary selection, and then add some services to your node. Once again, hold down Command or Control to select multiple services.
+</p>
+
+<h3>Requisitions</h3>
+
+<p>Requisitions are the groups of nodes that are eventually imported to OpenNMS. Create a new Requisition, and it's safe to leave the first two drop downs as they are. Check the boxes next to the nodes you defined that you want to add to this group and click <b>Create Requisition</b>.</p>
+
+<p>After you've created one or more requisition groups you can use the <b>Link to XML</b> link off the main Requisition page to feed the proper XML to OpenNMS.</p>
+
+<h3>Node Categories</h3>
+
+<p>OpenNMS has predefined node categories which should be automatically populated here. You can add more of your own in case you want to do that sort of thing.</p>
+
+<h3>Services</h3>
+
+<p>The services defined in OpenNMS should be defined here. Unless you're a wizard, you probably don't have a need to create new ones or edit existing ones.</p>
