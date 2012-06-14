@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(:version => 20120614192116) do
   create_table "ip_interfaces", :force => true do |t|
     t.string   "address"
     t.string   "description"
-    t.string   "snmp_primary"
+    t.string   "snmp_primary", :default => "P"
     t.integer  "node_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "ip_interfaces_services", :id => false, :force => true do |t|
