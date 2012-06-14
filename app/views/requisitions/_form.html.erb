@@ -5,6 +5,7 @@
     <%= f.input :name %>
 		<%= f.input :non_ip_snmp_primary, :as => :select, :collection => ['Y', 'N'] %>
 		<%= f.input :non_ip_interfaces, :as => :select, :collection => ['true', 'false'] %>
+		<%= f.association :nodes, :as => :check_boxes, :collection => Node.where %>
   </div>
 
   <div class="form-actions">
