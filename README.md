@@ -11,6 +11,8 @@ An example external provisioning source for OpenNMS.
 5. rake db:seed
 6. foreman start
 
+Now you should be able to access this at http://localhost:5000
+
 ## Status
 
 So this basically works, and it's for example. There's some things I plan on doing with it later.
