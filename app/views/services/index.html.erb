@@ -1,11 +1,13 @@
 <h1>Available Services for IP Interfaces</h1>
+<br />
+<%= link_to 'New Service', new_service_path, :class => 'btn pull-right' %>
+<br />
+<br />
 
 <table class='table table-striped'>
 	<thead>
   <tr>
     <th>Name</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 	</thead>
@@ -14,9 +16,11 @@
 <% @services.each do |service| %>
   <tr>
     <td><%= service.name %></td>
-    <td><%= link_to 'Show', service %></td>
-    <td><%= link_to 'Edit', edit_service_path(service) %></td>
-    <td><%= link_to 'Destroy', service, confirm: 'Are you sure?', method: :delete %></td>
+    <td>
+			<%= link_to 'Show', service, :class => 'btn' %>
+    	<%= link_to 'Edit', edit_service_path(service), :class => 'btn btn-primary' %>
+    	<%= link_to 'Destroy', service, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger' %>
+		</td>
   </tr>
 <% end %>
 </tbody>
@@ -24,4 +28,4 @@
 
 <br />
 
-<%= link_to 'New Service', new_service_path %>
+<%= link_to 'New Service', new_service_path, :class => 'btn pull-right' %>
