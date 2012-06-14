@@ -1,12 +1,15 @@
-<h1>Listing services</h1>
+<h1>Available Services for IP Interfaces</h1>
 
-<table>
+<table class='table table-striped'>
+	<thead>
   <tr>
     <th>Name</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
+	</thead>
+	<tbody>
 
 <% @services.each do |service| %>
   <tr>
@@ -16,6 +19,7 @@
     <td><%= link_to 'Destroy', service, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
