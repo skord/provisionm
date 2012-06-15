@@ -2,7 +2,8 @@
 	<thead>
   <tr>
     <th>Manufacturer</th>
-		<th>Registered Products</th>
+		<th>Known Products</th>
+		<th>Matching Nodes</th>
   </tr>
 	</thead>
 	<tbody>
@@ -10,6 +11,7 @@
 		  <tr>
 		    <td><%= link_to manufacturer.name, manufacturer %></td>
 				<td><%= manufacturer.products.count %></td>
+				<td><%= manufacturer.nodes.count %></td>
 		  </tr>
 		<% end %>
 	</tbody>
