@@ -48,3 +48,8 @@ gem 'bigdecimal'
 gem 'friendly_id'
 gem 'devise'
 gem 'kaminari'
+
+
+group :development, :test do
+  gem 'quiet_assets'
+end
