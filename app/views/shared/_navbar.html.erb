@@ -37,6 +37,9 @@
 					<% end %>
         </ul>
 				<ul class='nav pull-right'>
+					<form name='search' action='/nodes/search' class="navbar-form pull-left" method="get">
+					  <input type="text" class="span2" name='search' class='search-query' placeholder='Search Nodes'>
+					</form>
 					<% if controller.controller_name == 'help' %>
 						<li class='active'><%= link_to 'Help', help_path %></li>
 					<% else %>

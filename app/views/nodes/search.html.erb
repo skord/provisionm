@@ -1,0 +1,22 @@
+<% if @nodes.length == 0 %>
+	<h2>No search results, try something else.</h2>
+<% else %>
+	<table class='table table-striped'>
+		<thead>
+	  <tr>
+	    <th>Node</th>
+			<th>Interfaces</th>
+			<th>Services</th>
+	  </tr>
+		</thead>
+		<tbody>
+		<% @nodes.each do |node| %>
+		  <tr>
+		    <td><%= link_to node.name, node %></td>
+				<td><%= node.ip_interfaces.count %></td>
+				<td><%= node.services.count %></td>
+		  </tr>
+		<% end %>
+		</tbody>
+	</table>
+<% end %>

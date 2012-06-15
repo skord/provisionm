@@ -17,3 +17,5 @@
 .powrc
 .DS_Store
 .env
+solr/data
+*.lck

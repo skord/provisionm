@@ -48,7 +48,9 @@ gem 'bigdecimal'
 gem 'friendly_id'
 gem 'devise'
 gem 'kaminari', ">= 0.13.0"
-
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+gem 'progress_bar'
 
 group :development, :test do
   gem 'quiet_assets'

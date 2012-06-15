@@ -11,7 +11,11 @@ Provisionm::Application.routes.draw do
 
   resources :services
 
-  resources :nodes
+  resources :nodes do
+    collection do
+      get 'search'
+    end
+  end
 
   resources :node_categories
 

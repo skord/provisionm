@@ -82,4 +82,9 @@ class NodesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def search
+    @nodes = Node.search {fulltext params['search']}.results
+  end
+  
 end

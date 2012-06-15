@@ -19,6 +19,14 @@ class Node < ActiveRecord::Base
     end
   end
   
+  searchable do 
+    text :name
+    text :building do
+      self.building.try(:name)
+    end
+  end
+  
+  
   attr_accessible :foreign_reference, :name, :manufacturer_id, :building_id, :product_id, :support_contract_id, :vendor_id, :node_category_ids,
                   :ip_interfaces_attributes, :requisition_id
 end
