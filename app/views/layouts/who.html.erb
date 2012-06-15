@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Provisionm</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+	<script type="text/javascript" charset="utf-8">
+		<% if current_user %>
+			$(document).ready(function() {
+				$('.admin').show();
+			 });
+		<% end %>
+	</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<%= render 'shared/navbar' %>
+	<div class='subnav subnav-fixed'>
+		<ul class='nav nav-pills'>
+			<li><%= link_to 'Manufacturers', manufacturers_path %></li>
+			<li><%= link_to 'Vendors', vendors_path %></li>			
+		</ul>
+	</div>
+	<div class='container-fluid'>
+
+		<% if notice %>
+		<div class='alert alert-info'><%= notice %></div>
+		<% end %>
+
+		<% if alert %>
+		<div class='alert alert-error'><%= alert %></div>
+		<% end %>
+	
+		<%= yield %>
+	</div>
+</body>
+</html>

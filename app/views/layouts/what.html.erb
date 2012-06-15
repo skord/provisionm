@@ -5,10 +5,23 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+	<script type="text/javascript" charset="utf-8">
+		<% if current_user %>
+			$(document).ready(function() {
+				$('.admin').show();
+			 });
+		<% end %>
+	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 	<%= render 'shared/navbar' %>
+	<div class='subnav subnav-fixed'>
+		<ul class='nav nav-pills'>
+			<li><%= link_to 'Nodes', nodes_path %></li>
+			<li><%= link_to 'Requisitions', requisitions_path %></li>
+		</ul>
+	</div>
 <div class='container-fluid'>
 
 	<% if notice %>
@@ -18,21 +31,8 @@
 	<% if alert %>
 	<div class='alert alert-error'><%= alert %></div>
 	<% end %>
-
-	<div class='row-fluid'>
-		<div class='span12'>
-			<h1><%= @title %></h1>
-		</div>
-	</div>
-	<br />
-	<div class='row-fluid'>
-		<div class='span2'>
-			<%= render 'nav_list' %>
-		</div>
-		<div class='span10'>
-			<%= yield %>
-		</div>
-	</div>	
+	
+	<%= yield %>
 </div>
 </body>
 </html>
