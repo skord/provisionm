@@ -2,16 +2,16 @@
 	<thead>
 	  <tr>
 	    <th>Building</th>
-	    <th>City</th>
-			<th>State</th>
+	    <th>City, State</th>
+			<th>Nodes</th>
 	  </tr>
 	</thead>
 	<tbody>
 		<% @buildings.each do |building| %>
 		  <tr>
 		    <td><%= link_to building.name, building %></td>
-				<td><%= building.city %></td>
-				<td><%= building.state %></td>
+				<td><%= building.city %><%= ',' unless building.state.blank? %> <%= building.state %></td>
+				<td><%= building.nodes.count %></td>
 		  </tr>
 		<% end %>
 	</tbody>

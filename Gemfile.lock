@@ -64,6 +64,8 @@ GEM
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
     json (1.7.3)
+    kaminari (0.12.4)
+      rails (>= 3.0.0)
     kgio (2.7.4)
     less (2.2.1)
       commonjs (~> 0.2.6)
@@ -151,6 +153,7 @@ DEPENDENCIES
   ipaddress
   jbuilder
   jquery-rails
+  kaminari
   less-rails-bootstrap
   pg
   rails (= 3.2.5)

@@ -4,7 +4,7 @@ class NodesController < ApplicationController
   layout 'what'
   # GET /nodes.json
   def index
-    @nodes = Node.all
+    @nodes = Node.order(:name).page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
