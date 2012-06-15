@@ -1,23 +1,15 @@
-<h1>Manufacturers</h1>
-
 <table class='table table-striped'>
 	<thead>
   <tr>
-    <th>Name</th>
+    <th>Manufacturer</th>
 		<th>Registered Products</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 	</thead>
 	<tbody>
 		<% @manufacturers.each do |manufacturer| %>
 		  <tr>
-		    <td><%= manufacturer.name %></td>
+		    <td><%= link_to manufacturer.name, manufacturer %></td>
 				<td><%= manufacturer.products.count %></td>
-		    <td><%= link_to 'Show', manufacturer, :class => 'btn' %></td>
-		    <td><%= link_to 'Edit', edit_manufacturer_path(manufacturer), :class => 'btn btn-primary admin' %></td>
-		    <td><%= link_to 'Destroy', manufacturer, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger admin' %></td>
 		  </tr>
 		<% end %>
 	</tbody>

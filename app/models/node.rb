@@ -8,6 +8,7 @@ class Node < ActiveRecord::Base
   belongs_to :requisition, :touch => true
   has_and_belongs_to_many :node_categories
   has_many :ip_interfaces, :dependent => :destroy
+  has_many :services, :through => :ip_interfaces
   accepts_nested_attributes_for :ip_interfaces, :reject_if => :all_blank, :allow_destroy => true
   
   before_validation :ensure_foreign_reference

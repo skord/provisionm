@@ -1,34 +1,22 @@
-<p>
-  <b>Name:</b>
-  <%= @building.name %>
-</p>
+<br>
+<address>
+	<h1><%= @building.name %></h1>
+	<%= @building.address1 %>
+	<br>
+	<% unless @building.address2.blank? %>
+	<%= @building.address2 %>
+	<br>
+	<% end %>
+	<%= @building.city %>,  <%= @building.state %> <%= @building.zip %>
+</address>
 
-<p>
-  <b>Address1:</b>
-  <%= @building.address1 %>
-</p>
+Node Count: <%= @building.nodes.count %>
 
-<p>
-  <b>Address2:</b>
-  <%= @building.address2 %>
-</p>
+<br>
+<br>
 
-<p>
-  <b>City:</b>
-  <%= @building.city %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @building.state %>
-</p>
-
-<p>
-  <b>Zip:</b>
-  <%= @building.zip %>
-</p>
-
-
-<%= link_to 'Edit', edit_building_path(@building), :class => 'btn btn-primary admin' %>
-
-<%= link_to 'Back', buildings_path, :class => 'btn' %>
+<div class='row-fluid'>
+	<%= link_to 'Edit', edit_building_path(@building), :class => 'btn btn-primary admin' %>
+	<%= link_to 'Delete', @building, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger admin' %>
+	<%= link_to 'Back', buildings_path, :class => 'btn' %>
+</div>

@@ -5,21 +5,25 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-	<script type="text/javascript" charset="utf-8">
-		<% if current_user %>
-			$(document).ready(function() {
-				$('.admin').show();
-			 });
-		<% end %>
-	</script>
+	<% if current_user %>
+		<%= render 'shared/admin' %>
+	<% end %>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 	<%= render 'shared/navbar' %>
 	<div class='subnav subnav-fixed'>
 		<ul class='nav nav-pills'>
-			<li><%= link_to 'Nodes', nodes_path %></li>
-			<li><%= link_to 'Requisitions', requisitions_path %></li>
+			<% if controller.controller_name == 'nodes' %>
+				<li class='active'><%= link_to 'Nodes', nodes_path %></li>
+			<% else %>
+				<li><%= link_to 'Nodes', nodes_path %></li>
+			<% end %>
+			<% if controller.controller_name == 'requisitions' %>
+				<li class='active'><%= link_to 'Requisitions', requisitions_path %></li>
+			<% else %>
+				<li><%= link_to 'Requisitions', requisitions_path %></li>
+			<% end %>
 		</ul>
 	</div>
 <div class='container-fluid'>

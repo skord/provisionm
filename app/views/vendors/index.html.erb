@@ -1,29 +1,17 @@
-<h1>Vendors</h1>
-
-<table class='table'>
+<table class='table table-striped'>
 	<thead>
 	  <tr>
-	    <th>Name</th>
-	    <th>Phone</th>
-	    <th>Fax</th>
+	    <th>Vendor</th>
 			<th>Active Support Contracts</th>
 			<th>Expired Support Contracts</th>
-	    <th></th>
-	    <th></th>
-	    <th></th>
 	  </tr>
 	</thead>
 	<tbody>
 		<% @vendors.each do |vendor| %>
 		  <tr>
-		    <td><%= vendor.name %></td>
-		    <td><%= vendor.phone %></td>
-		    <td><%= vendor.fax %></td>
+		    <td><%= link_to vendor.name, vendor %></td>
 				<td><%= vendor.support_contracts.active.count %></td>
 				<td><%= vendor.support_contracts.expired.count %></td>				
-		    <td><%= link_to 'Show', vendor, :class => 'btn' %></td>
-		    <td><%= link_to 'Edit', edit_vendor_path(vendor), :class => 'btn btn-primary admin' %></td>
-		    <td><%= link_to 'Destroy', vendor, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger admin' %></td>
 		  </tr>
 		<% end %>
 	</tbody>

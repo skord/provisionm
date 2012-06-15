@@ -1,35 +1,17 @@
-<h1>Nodes</h1>
-
-<table class='table'>
+<table class='table table-striped'>
 	<thead>
   <tr>
-    <th>Name</th>
-    <th>Foreign reference</th>
-		<th>Requisition Group</th>
-    <th>Manufacturer</th>
-    <th>Building</th>
-    <th>Product</th>
-    <th>Support contract</th>
-    <th>Vendor</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Node</th>
+		<th>Interfaces</th>
+		<th>Services</th>
   </tr>
 	</thead>
 	<tbody>
 	<% @nodes.each do |node| %>
 	  <tr>
-	    <td><%= node.name %></td>
-	    <td><%= node.foreign_reference %></td>
-			<td><%= node.requisition.try(:name) %></td>
-	    <td><%= node.manufacturer.try(:name) %></td>
-	    <td><%= node.building.try(:name) %></td>
-	    <td><%= node.product.try(:name) %></td>
-	    <td><%= node.support_contract.try(:name) %></td>
-	    <td><%= node.vendor.try(:name) %></td>
-	    <td><%= link_to 'Show', node, :class => 'btn' %></td>
-	    <td><%= link_to 'Edit', edit_node_path(node), :class => 'btn btn-primary admin' %></td>
-	    <td><%= link_to 'Destroy', node, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger admin' %></td>
+	    <td><%= link_to node.name, node %></td>
+			<td><%= node.ip_interfaces.count %></td>
+			<td><%= node.services.count %></td>
 	  </tr>
 	<% end %>
 	</tbody>

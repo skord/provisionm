@@ -58,4 +58,5 @@
 </table>
 
 <%= link_to 'Edit', edit_node_path(@node), :class => 'btn btn-primary admin' %>
+<%= link_to 'Delete', @node, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger admin' %>
 <%= link_to 'Back', nodes_path, :class => 'btn' %>

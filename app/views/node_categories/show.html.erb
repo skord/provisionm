@@ -1,8 +1,7 @@
-<p>
-  <b>Name:</b>
-  <%= @node_category.name %>
-</p>
-
-
-<%= link_to 'Edit', edit_node_category_path(@node_category), :class => 'btn btn-primary admin' %>
-<%= link_to 'Back', node_categories_path, :class => 'btn' %>
+<h1><%= @node_category.name %></h1>
+<br>
+<div class='row-fluid'>
+	<%= link_to 'Edit', edit_node_category_path(@node_category), :class => 'btn btn-primary admin' %>
+	<%= link_to 'Delete', @node_category, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger admin' %>
+	<%= link_to 'Back', node_categories_path, :class => 'btn' %>
+</div>

@@ -5,11 +5,11 @@
 		<%= f.association :requisition %>
     <%= f.input :name %>
     <%= f.input :foreign_reference %>
-    <%= f.association :manufacturer %>
     <%= f.association :building %>
+    <%= f.association :manufacturer %>
     <%= f.association :product %>
-    <%= f.association :support_contract %>
     <%= f.association :vendor %>
+    <%= f.association :support_contract %>
 		<%= f.association :node_categories %>
 		<div id='ip_interfaces'>
 			<%= f.simple_fields_for :ip_interfaces do |ip_interface| %>

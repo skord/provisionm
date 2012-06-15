@@ -1,28 +1,16 @@
-<h1>Services</h1>
-<br />
-
-<%= link_to 'New Service', new_service_path, :class => 'btn btn-success pull-right admin' %>
-
-<br />
-<br />
-
 <table class='table table-striped'>
 	<thead>
   <tr>
     <th>Name</th>
-    <th></th>
+    <th>Instances</th>
   </tr>
 	</thead>
 	<tbody>
 
 <% @services.each do |service| %>
   <tr>
-    <td><%= service.name %></td>
-    <td>
-			<%= link_to 'Show', service, :class => 'btn' %>
-    	<%= link_to 'Edit', edit_service_path(service), :class => 'btn btn-primary admin' %>
-    	<%= link_to 'Destroy', service, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger admin' %>
-		</td>
+    <td><%= link_to service.name, service %></td>
+    <td><%= service.ip_interfaces.count %></td>
   </tr>
 <% end %>
 </tbody>
@@ -30,4 +18,4 @@
 
 <br />
 
-<%= link_to 'New Service', new_service_path, :class => 'btn btn-success pull-right admin' %>
+<%= link_to 'New Service', new_service_path, :class => 'btn btn-success admin' %>
