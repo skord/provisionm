@@ -39,6 +39,11 @@
   <%= @node.vendor.try(:name) %>
 </p>
 
+<p>
+	<b>Size in Rack Units:</b>
+	<%= @node.ru_size %>
+</p>
+
 <h3>Categories</h3>
 <%= render :partial => 'node_category', :collection => @node.node_categories %>
 

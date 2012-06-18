@@ -1,6 +1,7 @@
 class SupportContract < ActiveRecord::Base
   validates :name, :presence => true, :uniqueness => true
   validates :expires_at, :presence => true
+  has_many :nodes
   belongs_to :vendor
   attr_accessible :expires_at, :name
   scope :expired, lambda { where("expires_at <= ?", Date.today ) }

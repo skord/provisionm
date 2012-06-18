@@ -5,7 +5,12 @@
 		<%= f.association :requisition %>
     <%= f.input :name %>
     <%= f.input :foreign_reference %>
+		<%= f.input :ru_size, :label => "Size in RU" %>
     <%= f.association :building %>
+		<label>Room</label>
+		<%= f.grouped_collection_select :room_id, Building.order(:name), :rooms, :name, :id, :name, :include_blank => true %>
+		<label>Physical Rack</lable>
+		<%= f.grouped_collection_select :physical_rack_id, Room.order(:name), :physical_racks, :name, :id, :name, :include_blank => true %>
     <%= f.association :manufacturer %>
     <%= f.association :product %>
     <%= f.association :vendor %>

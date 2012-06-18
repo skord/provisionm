@@ -1,0 +1,10 @@
+<div class='nested-fields well'>
+	<%= f.input :name, :label => 'Room Name' %>
+	<div class='physical_racks'>
+		<%= f.simple_fields_for :physical_racks do |physical_rack| %>
+			<%= render 'physical_rack_fields', :f => physical_rack %>
+		<% end %>
+		<%= link_to_add_association 'Add Rack', f, :physical_racks, :class => 'btn btn-success' %>
+		<%= link_to_remove_association "Remove", f, :class => 'btn btn-danger' %>
+	</div>
+</div>

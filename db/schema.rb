@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120614202526) do
+ActiveRecord::Schema.define(:version => 20120618171811) do
 
   create_table "buildings", :force => true do |t|
     t.string   "name"
@@ -69,17 +69,32 @@ ActiveRecord::Schema.define(:version => 20120614202526) do
     t.integer  "product_id"
     t.integer  "support_contract_id"
     t.integer  "vendor_id"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "requisition_id"
+    t.integer  "ru_size",             :default => 1
+    t.integer  "room_id"
+    t.integer  "physical_rack_id"
   end
 
   add_index "nodes", ["building_id"], :name => "index_nodes_on_building_id"
   add_index "nodes", ["manufacturer_id"], :name => "index_nodes_on_manufacturer_id"
+  add_index "nodes", ["physical_rack_id"], :name => "index_nodes_on_physical_rack_id"
   add_index "nodes", ["product_id"], :name => "index_nodes_on_product_id"
   add_index "nodes", ["requisition_id"], :name => "index_nodes_on_requisition_id"
+  add_index "nodes", ["room_id"], :name => "index_nodes_on_room_id"
   add_index "nodes", ["support_contract_id"], :name => "index_nodes_on_support_contract_id"
   add_index "nodes", ["vendor_id"], :name => "index_nodes_on_vendor_id"
+
+  create_table "physical_racks", :force => true do |t|
+    t.string   "name"
+    t.integer  "room_id"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.integer  "ru_size",    :default => 54
+  end
+
+  add_index "physical_racks", ["room_id"], :name => "index_physical_racks_on_room_id"
 
   create_table "products", :force => true do |t|
     t.string   "name"
@@ -101,6 +116,15 @@ ActiveRecord::Schema.define(:version => 20120614202526) do
   end
 
   add_index "requisitions", ["slug"], :name => "index_requisitions_on_slug"
+
+  create_table "rooms", :force => true do |t|
+    t.string   "name"
+    t.integer  "building_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "rooms", ["building_id"], :name => "index_rooms_on_building_id"
 
   create_table "services", :force => true do |t|
     t.string   "name"

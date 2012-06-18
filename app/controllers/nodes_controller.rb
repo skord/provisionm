@@ -84,7 +84,11 @@ class NodesController < ApplicationController
   end
   
   def search
-    @nodes = Node.search {fulltext params['search']}.results
+    @search_term = params['search']
+    @search = Node.search {fulltext params['search']}
+    @results = @search.results
+    @nodes = @results
+    
   end
   
 end

@@ -10,6 +10,8 @@ class Node < ActiveRecord::Base
   has_many :ip_interfaces, :dependent => :destroy
   has_many :services, :through => :ip_interfaces
   accepts_nested_attributes_for :ip_interfaces, :reject_if => :all_blank, :allow_destroy => true
+  belongs_to :physical_rack
+  belongs_to :room
   
   before_validation :ensure_foreign_reference
   
@@ -28,5 +30,5 @@ class Node < ActiveRecord::Base
   
   
   attr_accessible :foreign_reference, :name, :manufacturer_id, :building_id, :product_id, :support_contract_id, :vendor_id, :node_category_ids,
-                  :ip_interfaces_attributes, :requisition_id
+                  :ip_interfaces_attributes, :requisition_id, :ru_size, :physical_rack_id, :room_id
 end
