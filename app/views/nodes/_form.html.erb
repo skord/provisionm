@@ -12,9 +12,11 @@
 		<label>Physical Rack</lable>
 		<%= f.grouped_collection_select :physical_rack_id, Room.order(:name), :physical_racks, :name, :id, :name, :include_blank => true %>
     <%= f.association :manufacturer %>
-    <%= f.association :product %>
+		<label>Product</label>
+		<%= f.grouped_collection_select :product_id, Manufacturer.order(:name), :products, :name, :id, :name, :include_blank => true %>
     <%= f.association :vendor %>
-    <%= f.association :support_contract %>
+		<label>Support Contract</label>
+		<%= f.grouped_collection_select :support_contract_id, Vendor.order(:name), :support_contracts, :name, :id, :name, :include_blank => true %>
 		<%= f.association :node_categories %>
 		<div id='ip_interfaces'>
 			<%= f.simple_fields_for :ip_interfaces do |ip_interface| %>
