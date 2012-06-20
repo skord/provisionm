@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120618171811) do
+ActiveRecord::Schema.define(:version => 20120620132125) do
 
   create_table "buildings", :force => true do |t|
     t.string   "name"
@@ -72,9 +72,10 @@ ActiveRecord::Schema.define(:version => 20120618171811) do
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
     t.integer  "requisition_id"
-    t.integer  "ru_size",             :default => 1
     t.integer  "room_id"
     t.integer  "physical_rack_id"
+    t.integer  "ru_size",             :default => 1
+    t.integer  "ru_position"
   end
 
   add_index "nodes", ["building_id"], :name => "index_nodes_on_building_id"
@@ -89,11 +90,13 @@ ActiveRecord::Schema.define(:version => 20120618171811) do
   create_table "physical_racks", :force => true do |t|
     t.string   "name"
     t.integer  "room_id"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-    t.integer  "ru_size",    :default => 54
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.integer  "ru_size",     :default => 54
+    t.integer  "building_id"
   end
 
+  add_index "physical_racks", ["building_id"], :name => "index_physical_racks_on_building_id"
   add_index "physical_racks", ["room_id"], :name => "index_physical_racks_on_room_id"
 
   create_table "products", :force => true do |t|

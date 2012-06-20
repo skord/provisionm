@@ -13,6 +13,7 @@ class Node < ActiveRecord::Base
   belongs_to :physical_rack
   belongs_to :room
   
+  
   before_validation :ensure_foreign_reference
   
   def ensure_foreign_reference
@@ -30,5 +31,5 @@ class Node < ActiveRecord::Base
   
   
   attr_accessible :foreign_reference, :name, :manufacturer_id, :building_id, :product_id, :support_contract_id, :vendor_id, :node_category_ids,
-                  :ip_interfaces_attributes, :requisition_id, :ru_size, :physical_rack_id, :room_id
+                  :ip_interfaces_attributes, :requisition_id, :ru_size, :physical_rack_id, :room_id, :ru_position
 end

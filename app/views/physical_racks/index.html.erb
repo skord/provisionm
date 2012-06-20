@@ -1,0 +1,27 @@
+<%= render 'shared/building_crumbs' %>
+<h1>Listing physical_racks</h1>
+
+<table class='table table-striped'>
+	<thead>
+	  <tr>
+			<th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	</thead>
+	<tbody>
+<% @physical_racks.each do |physical_rack| %>
+  <tr>
+		<td><%= physical_rack.name %></td>
+    <td><%= link_to 'Show', building_physical_rack_path(@building.id, physical_rack.id) %></td>
+    <td><%= link_to 'Edit', edit_building_physical_rack_path(@building.id, physical_rack) %></td>
+    <td><%= link_to 'Destroy', building_physical_rack_path(@building.id, physical_rack), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Physical rack', new_building_physical_rack_path %>

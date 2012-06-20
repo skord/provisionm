@@ -23,7 +23,10 @@ Provisionm::Application.routes.draw do
 
   resources :manufacturers
 
-  resources :buildings
+  resources :buildings do
+    resources :rooms
+    resources :physical_racks
+  end
 
   get "welcome/index"
 

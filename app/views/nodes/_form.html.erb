@@ -9,8 +9,13 @@
     <%= f.association :building %>
 		<label>Room</label>
 		<%= f.grouped_collection_select :room_id, Building.order(:name), :rooms, :name, :id, :name, :include_blank => true %>
-		<label>Physical Rack</lable>
-		<%= f.grouped_collection_select :physical_rack_id, Room.order(:name), :physical_racks, :name, :id, :name, :include_blank => true %>
+		<div class='control-group select optional'>
+			<label class='select optional control-label' for='node_physical_rack_id'>Rack</label>
+			<div class='controls'>
+				<%= f.grouped_collection_select :physical_rack_id, Room.order(:name), :physical_racks, :name, :id, :name, :include_blank => true %>
+			</div>
+		</div>
+		<%= f.input :ru_position, :label => 'Rack Slot'  %>
     <%= f.association :manufacturer %>
 		<label>Product</label>
 		<%= f.grouped_collection_select :product_id, Manufacturer.order(:name), :products, :name, :id, :name, :include_blank => true %>

@@ -1,0 +1,4 @@
+<%= render 'shared/building_crumbs' %>
+<h1><%= @room.name %></h1>
+<%= link_to 'Edit', edit_building_room_path(@building, @room), :class => 'btn btn-primary' %>
+<%= link_to 'Back', building_rooms_path, :class => 'btn' %>

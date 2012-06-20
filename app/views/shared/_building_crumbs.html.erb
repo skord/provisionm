@@ -1,0 +1,5 @@
+<ul class="nav nav-pills">
+  <li <%= 'class=active' if controller.controller_name == 'buildings' %>><%= link_to @building.name, building_path(@building) %></li>
+  <li <%= 'class=active' if controller.controller_name == 'rooms' %>><%= link_to 'Rooms', building_rooms_path(@building) %></li>
+  <li <%= 'class=active' if controller.controller_name == 'physical_racks' %> ><%= link_to 'Racks', building_physical_racks_path(@building)  %></li>
+</ul>

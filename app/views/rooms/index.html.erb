@@ -1,0 +1,28 @@
+<%= render 'shared/building_crumbs' %>
+
+<h1>Listing rooms</h1>
+
+<table class='table'>
+	<thead>
+  <tr>
+		<th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+	</thead>
+	<tbody>
+<% @rooms.each do |room| %>
+  <tr>
+		<td><%= room.name %></td>
+    <td><%= link_to 'Show', building_room_path(@building, room) %></td>
+    <td><%= link_to 'Edit', edit_building_room_path(@building, room) %></td>
+    <td><%= link_to 'Destroy', building_room_path(@building, room), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Room', new_building_room_path(@building) %>
